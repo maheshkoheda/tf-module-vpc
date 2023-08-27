@@ -24,7 +24,7 @@ resource "aws_route" "igw" {
 }
 
 resource "aws_eip" "ngw" {
-  for_each = lookup(lookup(module.subnets, "public", null), "subnet_ids", null)
+  count = local.public_subnet_ids
   domain   = "vpc"
 }
 
