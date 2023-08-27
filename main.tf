@@ -56,4 +56,7 @@ resource "aws_route" "peer" {
   vpc_peering_connection_id = aws_vpc_peering_connection.peering.id
 }
 
-
+resource "aws_instance" "main" {
+  instance_type = "t3.micro"
+  image_id = "ami-03265a0778a880afb"
+}
