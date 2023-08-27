@@ -45,7 +45,7 @@ resource "aws_route" "ngw" {
 
 
 
-resource "aws_vpc_peering_connection" "foo" {
+resource "aws_vpc_peering_connection" "peering" {
 
   peer_vpc_id   = aws_vpc.main.id
   vpc_id        = var.default_vpc_id
