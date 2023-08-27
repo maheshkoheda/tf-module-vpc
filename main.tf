@@ -23,6 +23,13 @@ resource "aws_route" "igw" {
   gateway_id = aws_internet_gateway.igw.id
 }
 
+resource "aws_nat_gateway" "ngw" {
+  for_each = lookup(lookup(module.subnets, "public", null), "subnet_ids", null)
+  allocation_id = aws_eip.example.id
+  subnet_id     = aws_subnet.example.id
+
+}
+
 output "subnet" {
   value = module.subnets
 }
