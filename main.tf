@@ -58,7 +58,7 @@ resource "aws_route" "peer" {
 
 resource "aws_instance" "main" {
   instance_type = "t3.micro"
-  image_id = "ami-03265a0778a880afb"
+  ami = "03265a0778a880afb"
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
   subnet_id = local.app_subnet_ids[0]
 }
