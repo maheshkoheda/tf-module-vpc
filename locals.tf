@@ -1,6 +1,7 @@
 locals {
   # Subnets
   # Check k,v,x in for loop and see if 3 subnets and related route tables are creating.
+  #No k,v are key value notations in a for loops for map
   public_subnet_ids = [for k,v in lookup(lookup(module.subnets, "public", null), "subnet_ids", null): v.id ]
   app_subnet_ids = [for k,v in lookup(lookup(module.subnets, "app", null), "subnet_ids", null): v.id ]
   db_subnet_ids = [for k,v in lookup(lookup(module.subnets, "db", null), "subnet_ids", null): v.id ]

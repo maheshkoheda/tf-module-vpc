@@ -1,4 +1,4 @@
-#Creating vpc with tag per make file environment dev or prod
+#Creating vpc cidr same as env tfvars? with tag per make file environment dev or prod
 resource "aws_vpc" "main" {
   cidr_block = var.cidr
   tags = merge(local.tags, { Name = "${var.env}-vpc"})
