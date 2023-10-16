@@ -50,7 +50,6 @@ resource "aws_route" "ngw" {
 }
 #VPCs peering between selected env and default. And accepting peering.creating name as env-peer
 resource "aws_vpc_peering_connection" "peering" {
-
   peer_vpc_id   = aws_vpc.main.id
   vpc_id        = var.default_vpc_id
   auto_accept = true
